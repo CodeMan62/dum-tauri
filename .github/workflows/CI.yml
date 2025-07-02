@@ -105,7 +105,7 @@ jobs:
         if: matrix.platform == 'ubuntu-latest'
         working-directory: src-tauri
         run: |
-           # First, try running the tests and capture the output and exit code
+          # First, try running the tests and capture the output and exit code
           cargo test > test_output.log 2>&1
           test_exit_code=$?
           
