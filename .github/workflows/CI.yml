@@ -144,7 +144,7 @@ jobs:
       # Run tests with handling for platform-specific issues
       - name: Run tests
         working-directory: src-tauri
-        run: cd src-tauri && cargo test
+        run: cargo test
         env:
           # For Ubuntu builds
           PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
