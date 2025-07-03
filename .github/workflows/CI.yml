@@ -144,7 +144,7 @@ jobs:
       # Run tests with handling for platform-specific issues
       - name: Run tests
         working-directory: src-tauri
-        run: cargo test --all
+        run: cd src-tauri && cargo test
         env:
           # For Ubuntu builds
           PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
@@ -219,7 +219,7 @@ jobs:
       # Check if the tauri build will succeed without actually building
       - name: Check Tauri build
         working-directory: src-tauri
-        run: cargo check --no-default-features --features 
+        run: cargo check 
 
       # Build the app in release mode
       - name: Build the app
