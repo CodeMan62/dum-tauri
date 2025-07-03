@@ -77,11 +77,10 @@ jobs:
 
       - name: Check format
         working-directory: src-tauri
-        run: cargo fmt --check || echo "Format issues found, but continuing..."
-
+        run: cargo fmt --check 
       - name: Run clippy
         working-directory: src-tauri
-        run: cargo clippy -- -D warnings || echo "Clippy issues found, but continuing..."
+        run: cargo clippy -- -D warnings 
 
   test-frontend:
     name: Test Frontend
@@ -220,7 +219,7 @@ jobs:
       # Check if the tauri build will succeed without actually building
       - name: Check Tauri build
         working-directory: src-tauri
-        run: cargo check --no-default-features --features custom-protocol
+        run: cargo check --no-default-features --features 
 
       # Build the app in release mode
       - name: Build the app
