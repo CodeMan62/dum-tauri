@@ -1,26 +1,61 @@
 {
-  "name": "dum-app",
+  "name": "dum-tauri",
   "private": true,
   "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:web": "tsc && vite build",
+    "build:tauri": "tauri build",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "format": "bun prettier . --write --ignore-path .gitignore",
+    "typecheck": "bun tsc --noEmit",
+    "lint": "bun eslint . --ext .ts,.tsx",
+    "lint:fix": "bun eslint . --ext .ts,.tsx --fix",
+    "commitlint": "commitlint --edit",
+    "prepare": "simple-git-hooks"
   },
   "dependencies": {
+    "@tauri-apps/api": "^2.5.0",
+    "@tauri-apps/plugin-dialog": "^2.2.2",
+    "@tauri-apps/plugin-fs": "^2.3.0",
+    "@tauri-apps/plugin-http": "^2.4.4",
+    "@tauri-apps/plugin-opener": "^2",
+    "@tauri-apps/plugin-os": "^2.2.1",
+    "@tauri-apps/plugin-shell": "^2.0.0",
+    "@tauri-apps/plugin-window-state": "~2",
+    "@types/prismjs": "^1.26.5",
+    "ansi-to-html": "^0.7.2",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.511.0",
+    "prismjs": "^1.30.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "@tauri-apps/api": "^2",
-    "@tauri-apps/plugin-opener": "^2"
+    "vscode-languageserver-protocol": "^3.17.5"
   },
   "devDependencies": {
-    "@types/react": "^18.3.1",
-    "@types/react-dom": "^18.3.1",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@tailwindcss/vite": "^4.1.8",
+    "@tauri-apps/cli": "^2",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "@typescript-eslint/eslint-plugin": "^8.35.0",
+    "@typescript-eslint/parser": "^8.35.0",
     "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.30.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "globals": "^16.2.0",
+    "prettier": "3.6.2",
+    "simple-git-hooks": "^2.13.0",
+    "tailwindcss": "^4.1.8",
     "typescript": "~5.6.2",
-    "vite": "^6.0.3",
-    "@tauri-apps/cli": "^2"
+    "vite": "^6.3.5"
+  },
+  "simple-git-hooks": {
+    "commit-msg": "bun commitlint --edit $1"
   }
 }
