@@ -227,7 +227,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tauriScript: bun run build:tauri
+          tauriScript: bun run tauri
 
       # Upload artifacts
       - name: Upload artifacts
